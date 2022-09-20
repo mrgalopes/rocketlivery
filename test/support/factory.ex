@@ -5,13 +5,13 @@ defmodule Rocketlivery.Factory do
 
   def user_params_factory do
     %{
-      age: 21,
-      address: "Rua dos Coqueiros, 10",
-      cep: "12345666",
-      cpf: "12345678909",
-      email: "test@email.com",
-      password: "test@123",
-      name: "João da Silva"
+      "age" => 21,
+      "address" => "Rua dos Coqueiros, 10",
+      "cep" => "01001000",
+      "cpf" => "12345678909",
+      "email" => "test@email.com",
+      "password" => "test@123",
+      "name" => "João da Silva"
     }
   end
 
@@ -25,6 +25,21 @@ defmodule Rocketlivery.Factory do
       email: "test@email.com",
       password: "test@123",
       name: "João da Silva"
+    }
+  end
+
+  def cep_info_factory do
+    %{
+      "bairro" => "Sé",
+      "cep" => "01001-000",
+      "complemento" => "lado ímpar",
+      "ddd" => "11",
+      "gia" => "1004",
+      "ibge" => "3550308",
+      "localidade" => "São Paulo",
+      "logradouro" => "Praça da Sé",
+      "siafi" => "7107",
+      "uf" => "SP"
     }
   end
 end

@@ -3,12 +3,18 @@ defmodule Rocketlivery.Users.CreateTest do
 
   alias Rocketlivery.{Error, User}
   alias Rocketlivery.Users.Create
+  alias Rocketlivery.ViaCep.ClientMock
 
+  import Mox
   import Rocketlivery.Factory
 
   describe "call" do
     test "when all params are valid, returns the user" do
       params = build(:user_params)
+
+      expect(ClientMock, :get_cep_info, fn _cep ->
+        {:ok, build(:cep_info)}
+      end)
 
       response = Create.call(params)
 
@@ -16,7 +22,7 @@ defmodule Rocketlivery.Users.CreateTest do
     end
 
     test "when there are invalid params, returns an error" do
-      params = build(:user_params, %{password: "123", age: 15})
+      params = build(:user_params, %{"password" => "123", "age" => 15})
 
       response = Create.call(params)
       assert {:error, %Error{status: :bad_request, result: changeset}} = response

@@ -16,7 +16,7 @@ defmodule Rocketlivery.UserTest do
     end
 
     test "when there is an error, returns an invalid changeset" do
-      params = build(:user_params, age: 15, password: "test")
+      params = build(:user_params, %{"age" => 15, "password" => "test"})
 
       response = User.changeset(params)
 

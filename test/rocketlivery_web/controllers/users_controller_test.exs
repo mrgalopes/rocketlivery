@@ -1,7 +1,10 @@
 defmodule RocketliveryWeb.UsersControllerTest do
   use RocketliveryWeb.ConnCase, async: true
 
+  import Mox
   import Rocketlivery.Factory
+
+  alias Rocketlivery.ViaCep.ClientMock
 
   describe "create/2" do
     test "when all params are valid, creates the user", %{conn: conn} do
@@ -14,6 +17,10 @@ defmodule RocketliveryWeb.UsersControllerTest do
         "password" => "test@123",
         "name" => "João da Silva"
       }
+
+      expect(ClientMock, :get_cep_info, fn _cep ->
+        {:ok, build(:cep_info)}
+      end)
 
       response =
         conn
