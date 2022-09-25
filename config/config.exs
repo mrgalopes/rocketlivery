@@ -16,6 +16,14 @@ config :rocketlivery, Rocketlivery.Repo,
 
 config :rocketlivery, Rocketlivery.Users.Create, via_cep_adapter: Rocketlivery.ViaCep.Client
 
+config :rocketlivery, RocketliveryWeb.Auth.Guardian,
+  issuer: "rocketlivery",
+  secret_key: "32M1ijqcFEDSgFV4f+wmglEGAtBiDEAQRn7/IkSfnQA2pxYZea6fAA/WpAOAkijF"
+
+config :rocketlivery, RocketliveryWeb.Auth.Pipeline,
+  module: RocketliveryWeb.Auth.Guardian,
+  error_handler: RocketliveryWeb.Auth.ErrorHandler
+
 # Configures the endpoint
 config :rocketlivery, RocketliveryWeb.Endpoint,
   url: [host: "localhost"],
