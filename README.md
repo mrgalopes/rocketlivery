@@ -2,7 +2,8 @@
 
 [![codecov](https://codecov.io/gh/mrgalopes/rocketlivery/branch/main/graph/badge.svg?token=E0INASZRIB)](https://codecov.io/gh/mrgalopes/rocketlivery)
 
-Simple app to manage food orders via a JSON API.
+Simple app to manage food orders via a JSON API. Can be accessed [here](https://worst-shimmering-springbok.gigalixirapp.com/).
+
 Made using Elixir's Phoenix Framework.
 Postal codes (from Brazil) are validated using an external API.
 Also, creates a report of orders periodically to a file.
