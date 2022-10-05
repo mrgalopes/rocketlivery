@@ -17,6 +17,7 @@ Made as part of a course on Elixir (Ignite by Rocketseat) to exercise concepts s
 - Consuming external APIs and making tests for them simulating their responses
 - Authentication with Guardian library using JWT tokens
 - Using a GenServer to generate a report periodically
+- CI / CD using Github Actions
 
 ## Running
 
