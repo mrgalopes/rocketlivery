@@ -46,5 +46,8 @@ jobs:
       - name: Install dependencies
         run: mix deps.get
 
+      - name: Run linter
+        run: mix credo --strict
+
       - name: Run tests
         run: mix test
