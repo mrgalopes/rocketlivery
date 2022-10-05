@@ -49,5 +49,8 @@ jobs:
       - name: Run linter
         run: mix credo --strict
 
+      - name: Check formatting
+        run: mix format --check-formatted
+
       - name: Run tests
         run: mix test
